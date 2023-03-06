@@ -5,11 +5,23 @@ export default function RecComp({title, image_url, hours, location, price_range}
 {
     return (
         <div>
-            <Box style={{ border: '2px solid' }} sx={{display: 'flex', flexDirection: 'row', boxShadow: 2, borderRadius: '16px', p: 2, 
-                justifyContent: "space-between", border: 1, borderColor: "gray"}}>
-                <Box sx={{display: 'flex', flexDirection: 'column', alignSelf: "flex-start"}}>
-                    <Typography variant="h5" sx={{fontWeight: 'bold'}}>
+            <Box style={{border: '2px solid'}} sx={{display: 'flex', flexDirection: 'row', boxShadow: 2, borderRadius: '16px', p: 2, 
+                border: 1, borderColor: 'grey.500', background: 'TODO'}} width={800}>
+                <Box sx={{display: 'flex', flexDirection: 'row', alignSelf: "flex-start", paddingLeft: 5}}>
+                    <img src={image_url} alt="oops" width={300} height={300}></img>
+                </Box>
+                <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px', alignSelf: 'flex-start', paddingLeft: 7, alignItems: 'flex-start'}}>
+                    <Typography variant="h4" sx={{fontWeight: 'bold', paddingTop: 3}}>
                         {title}
+                    </Typography>
+                    <Typography variant="h5" sx={{fontWeight: 'regular'}}>
+                        Hours: {hours}
+                    </Typography>
+                    <Typography variant="h5" sx={{fontWeight: 'regular'}}>
+                        Location: {location}
+                    </Typography>
+                    <Typography variant="h5" sx={{fontWeight: 'regular'}}>
+                        Price Range: {price_range}
                     </Typography>
                 </Box>
             </Box>
