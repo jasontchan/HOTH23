@@ -20,7 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.grid}>
           <p className={inter.className}>
-            <Link href="/posts/first-post">Read this page!</Link>
+            <Link href="/posts/survey">Read this page!</Link>
           </p>
         </div>
       </main>
