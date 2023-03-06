@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getDatabase } from "firebase/database";
+import { getDatabase, ref, get, DatabaseReference } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,3 +22,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const analytics = getAnalytics(app);
+
+//firebase helpers
+export async function readData(location: string) {
+  //might need to add if statements might need to be async
+  try {
+    const obj: DatabaseReference = ref(database, location);
+    const snapshot = await get(obj);
+    if (snapshot.exists()) {
+      console.log(snapshot);
+      return snapshot.val();
+    } else {
+      console.log("no data");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+  return null;
+}

@@ -17,10 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <div className={styles.grid}>
           <p className={inter.className}>
-            <Link href="/posts/first-post">Read this page!</Link>
+            <Link href="/posts/rec-page">RecommendationPage!</Link>
           </p>
         </div>
       </main>
